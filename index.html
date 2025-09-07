@@ -2,74 +2,264 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Amazon Competitor Data Service</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>AMI Solution — AI-powered Market Data</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font AI style -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body{font-family:"Orbitron",Tahoma,sans-serif;}
+    .glass{background:rgba(255,255,255,.05);backdrop-filter:saturate(180%) blur(8px)}
+    .neon{color:#0ff;text-shadow:0 0 6px #0ff,0 0 15px #0ff;}
+    .lang-select{appearance:none;padding:6px 30px 6px 36px;border-radius:8px;border:1px solid #1e3a8a;
+      background:#fff url('data:image/svg+xml;utf8,<svg fill="black" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 8px center;
+      background-size:16px;color:#1e3a8a;cursor:pointer;}
+    .lang-wrapper{position:relative;}
+    .lang-flag{position:absolute;left:10px;top:50%;transform:translateY(-50%);}
+  </style>
 </head>
-<body class="text-gray-800">
-  <header class="bg-blue-900 text-white">
-    <div class="max-w-6xl mx-auto p-4 flex justify-between">
-      <div class="font-bold">DataInsight</div>
-      <nav class="space-x-4">
-        <a href="#services" class="hover:underline">Services</a>
-        <a href="#pricing" class="hover:underline">Pricing</a>
-        <a href="#contact" class="hover:underline">Contact</a>
+<body class="bg-gray-950 text-gray-100">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-30 glass text-white">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center space-x-2">
+        <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-cyan-400 text-gray-900 font-extrabold">AI</span>
+        <span class="text-lg font-semibold">AMI Solution</span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-6 text-gray-200">
+        <a href="#services" class="hover:text-cyan-400" data-i18n="nav.services">Services</a>
+        <a href="#ai" class="hover:text-cyan-400" data-i18n="nav.ai">AI Insights</a>
+        <a href="#pricing" class="hover:text-cyan-400" data-i18n="nav.pricing">Pricing</a>
+        <a href="#contact" class="hover:text-cyan-400" data-i18n="nav.contact">Contact</a>
       </nav>
+      <div class="flex items-center space-x-3 relative">
+        <div class="lang-wrapper">
+          <span class="lang-flag" id="flag">🇺🇸</span>
+          <select id="lang" class="lang-select">
+            <option value="en">🇺🇸 English</option>
+            <option value="vi">🇻🇳 Tiếng Việt</option>
+            <option value="es">🇪🇸 Español</option>
+            <option value="zh">🇨🇳 中文</option>
+            <option value="ja">🇯🇵 日本語</option>
+          </select>
+        </div>
+        <a href="#contact" class="hidden md:inline-flex px-4 py-2 rounded-lg bg-cyan-400 text-gray-900 font-semibold hover:scale-105 transition" data-i18n="cta.header">Get Started</a>
+      </div>
     </div>
   </header>
 
-  <section class="bg-gradient-to-r from-blue-800 to-blue-600 text-white">
-    <div class="max-w-4xl mx-auto py-20 text-center">
-      <h1 class="text-4xl font-bold mb-4">Competitor Data for Amazon Sellers</h1>
-      <p class="mb-6">Track prices, promotions, ads, inventory & content. Turn insight into ROI.</p>
-      <a href="#contact" class="bg-white text-blue-800 px-6 py-3 rounded">Get Started</a>
-    </div>
-  </section>
-
-  <section id="services" class="max-w-6xl mx-auto py-14 px-4 grid md:grid-cols-3 gap-6">
-    <div class="p-6 bg-white rounded shadow">
-      <h3 class="font-bold text-lg mb-2">Price Tracking</h3>
-      <p>Monitor competitor prices, discounts & history.</p>
-    </div>
-    <div class="p-6 bg-white rounded shadow">
-      <h3 class="font-bold text-lg mb-2">Promotion & Deals</h3>
-      <p>Coupons, Lightning Deals, 7-Day Deals, Prime events.</p>
-    </div>
-    <div class="p-6 bg-white rounded shadow">
-      <h3 class="font-bold text-lg mb-2">Ads & Keywords</h3>
-      <p>Ad placements, keyword coverage, share of voice.</p>
-    </div>
-  </section>
-
-  <section id="pricing" class="bg-gray-50">
-    <div class="max-w-6xl mx-auto py-14 px-4 grid md:grid-cols-3 gap-6 text-center">
-      <div class="p-6 bg-white rounded shadow">
-        <h3 class="font-bold text-lg">Basic</h3><p class="my-2">$99/mo</p>
-        <p>Price & Inventory Alerts</p>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 py-20 lg:py-28 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight neon" data-i18n="hero.title">
+          Data & AI for smarter e-commerce decisions
+        </h1>
+        <p class="mt-5 text-white/90 text-lg" data-i18n="hero.subtitle">
+          Track competitors across Amazon, Walmart, Wayfair, Target — optimize pricing, promotions, ads & inventory.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#contact" class="px-6 py-3 rounded-xl bg-cyan-400 text-gray-900 font-semibold hover:scale-105 transition" data-i18n="cta.getStarted">Talk to us</a>
+          <a href="#services" class="px-6 py-3 rounded-xl border border-white/40 hover:bg-white/10 transition" data-i18n="cta.learnMore">Learn more</a>
+        </div>
       </div>
-      <div class="p-6 bg-white rounded shadow border-2 border-blue-600">
-        <h3 class="font-bold text-lg">Pro</h3><p class="my-2">$299/mo</p>
-        <p>+ Promotions & Ads + Weekly Reports</p>
-      </div>
-      <div class="p-6 bg-white rounded shadow">
-        <h3 class="font-bold text-lg">Enterprise</h3><p class="my-2">Custom</p>
-        <p>API access & Dedicated support</p>
+      <div class="relative">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="AI graphic" class="w-64 mx-auto animate-pulse"/>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="max-w-4xl mx-auto py-14 px-4">
-    <h2 class="text-2xl font-bold mb-4 text-center">Contact Us</h2>
-    <form class="bg-white p-6 rounded shadow space-y-3">
-      <input class="w-full border p-3 rounded" placeholder="Your Name"/>
-      <input type="email" class="w-full border p-3 rounded" placeholder="Your Email"/>
-      <textarea class="w-full border p-3 rounded" placeholder="Your Message"></textarea>
-      <button class="bg-blue-600 text-white px-6 py-3 rounded">Send</button>
-    </form>
+  <!-- Services -->
+  <section id="services" class="max-w-7xl mx-auto px-4 py-16">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-center neon" data-i18n="services.title">Market & Competitor Data</h2>
+    <div class="mt-10 grid md:grid-cols-3 gap-6">
+      <div class="p-6 bg-gray-900 rounded-2xl shadow border border-cyan-400/20">
+        <h3 class="font-bold text-lg text-cyan-300" data-i18n="services.price.h">Price Tracking</h3>
+        <p class="mt-2" data-i18n="services.price.p">Track list price, Buy Box, promo history.</p>
+      </div>
+      <div class="p-6 bg-gray-900 rounded-2xl shadow border border-cyan-400/20">
+        <h3 class="font-bold text-lg text-cyan-300" data-i18n="services.promo.h">Promotions & Deals</h3>
+        <p class="mt-2" data-i18n="services.promo.p">Coupons, Lightning Deals, seasonal campaigns.</p>
+      </div>
+      <div class="p-6 bg-gray-900 rounded-2xl shadow border border-cyan-400/20">
+        <h3 class="font-bold text-lg text-cyan-300" data-i18n="services.ads.h">Ads & Keywords</h3>
+        <p class="mt-2" data-i18n="services.ads.p">Ad placements, keyword share-of-voice.</p>
+      </div>
+    </div>
   </section>
 
-  <footer class="bg-blue-900 text-white text-center py-6">
-    © 2025 DataInsight
+  <!-- AI Insights -->
+  <section id="ai" class="bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 py-16">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-center neon" data-i18n="ai.title">AI-powered Insights</h2>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <div class="p-6 bg-gray-800 rounded-2xl">
+          <h3 class="font-bold text-lg text-cyan-300" data-i18n="ai.pricing.h">Dynamic Pricing</h3>
+          <p class="mt-2" data-i18n="ai.pricing.p">AI suggests optimal prices to win Buy Box.</p>
+        </div>
+        <div class="p-6 bg-gray-800 rounded-2xl">
+          <h3 class="font-bold text-lg text-cyan-300" data-i18n="ai.demand.h">Demand Forecast</h3>
+          <p class="mt-2" data-i18n="ai.demand.p">Predict demand & OOS risks with AI.</p>
+        </div>
+        <div class="p-6 bg-gray-800 rounded-2xl">
+          <h3 class="font-bold text-lg text-cyan-300" data-i18n="ai.content.h">Content Intelligence</h3>
+          <p class="mt-2" data-i18n="ai.content.p">AI analyzes reviews & suggests content improvements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="bg-gradient-to-br from-gray-900 to-blue-900">
+    <div class="max-w-7xl mx-auto px-4 py-16 text-white">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-center neon" data-i18n="pricing.title">Pricing Plans</h2>
+      <p class="text-center mt-3 text-gray-300" data-i18n="pricing.subtitle">Choose the plan that fits your business. Inspired by global leaders.</p>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <!-- Starter -->
+        <div class="bg-gray-800 p-6 rounded-2xl border border-cyan-400/20">
+          <h3 class="font-bold text-xl mb-2" data-i18n="pricing.basic.h">Starter</h3>
+          <p class="text-3xl font-extrabold text-cyan-400">$99<span class="text-base text-gray-400">/mo</span></p>
+          <ul class="mt-4 space-y-2 text-gray-300">
+            <li data-i18n="pricing.basic.f1">✓ Price & Inventory tracking</li>
+            <li data-i18n="pricing.basic.f2">✓ Weekly PDF reports</li>
+            <li data-i18n="pricing.basic.f3">✓ Limited to 50 ASINs</li>
+          </ul>
+        </div>
+        <!-- Pro -->
+        <div class="bg-gray-800 p-6 rounded-2xl border-2 border-cyan-400">
+          <h3 class="font-bold text-xl mb-2" data-i18n="pricing.pro.h">Pro</h3>
+          <p class="text-3xl font-extrabold text-cyan-400">$299<span class="text-base text-gray-400">/mo</span></p>
+          <ul class="mt-4 space-y-2 text-gray-300">
+            <li data-i18n="pricing.pro.f1">✓ All Starter features</li>
+            <li data-i18n="pricing.pro.f2">✓ Promotions & Ads analysis</li>
+            <li data-i18n="pricing.pro.f3">✓ Daily Dashboard</li>
+            <li data-i18n="pricing.pro.f4">✓ Up to 500 ASINs</li>
+          </ul>
+        </div>
+        <!-- Enterprise -->
+        <div class="bg-gray-800 p-6 rounded-2xl border border-cyan-400/20">
+          <h3 class="font-bold text-xl mb-2" data-i18n="pricing.ent.h">Enterprise</h3>
+          <p class="text-3xl font-extrabold text-cyan-400">Custom</p>
+          <ul class="mt-4 space-y-2 text-gray-300">
+            <li data-i18n="pricing.ent.f1">✓ All Pro features</li>
+            <li data-i18n="pricing.ent.f2">✓ API access</li>
+            <li data-i18n="pricing.ent.f3">✓ Dedicated support team</li>
+            <li data-i18n="pricing.ent.f4">✓ Unlimited ASINs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-gray-950">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+      <h2 class="text-3xl font-extrabold text-center neon" data-i18n="contact.title">Contact AMI Solution</h2>
+      <form class="mt-8 bg-gray-900 p-6 rounded-2xl space-y-4">
+        <input class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700" data-i18n-placeholder="contact.nameL" placeholder="Name"/>
+        <input type="email" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700" data-i18n-placeholder="contact.emailL" placeholder="Email"/>
+        <textarea rows="4" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700" data-i18n-placeholder="contact.msgL" placeholder="Message"></textarea>
+        <button type="submit" class="px-6 py-3 bg-cyan-400 text-gray-900 font-semibold rounded-lg hover:scale-105 transition" data-i18n="cta.send">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-gray-400 text-center py-6">
+    <p data-i18n="footer.copy">© 2025 AMI Solution. All rights reserved.</p>
   </footer>
+
+  <!-- i18n -->
+  <script>
+    const t = {
+      en: {
+        "nav.services":"Services","nav.ai":"AI Insights","nav.pricing":"Pricing","nav.contact":"Contact",
+        "cta.header":"Get Started","cta.getStarted":"Talk to us","cta.learnMore":"Learn more","cta.send":"Send",
+        "hero.title":"Data & AI for smarter e-commerce decisions","hero.subtitle":"Track competitors across Amazon, Walmart, Wayfair, Target — optimize pricing, promotions, ads & inventory.",
+        "services.title":"Market & Competitor Data","services.price.h":"Price Tracking","services.price.p":"Track list price, Buy Box, promo history.",
+        "services.promo.h":"Promotions & Deals","services.promo.p":"Coupons, Lightning Deals, seasonal campaigns.","services.ads.h":"Ads & Keywords","services.ads.p":"Ad placements, keyword share-of-voice.",
+        "ai.title":"AI-powered Insights","ai.pricing.h":"Dynamic Pricing","ai.pricing.p":"AI suggests optimal prices to win Buy Box.","ai.demand.h":"Demand Forecast","ai.demand.p":"Predict demand & OOS risks with AI.","ai.content.h":"Content Intelligence","ai.content.p":"AI analyzes reviews & suggests content improvements.",
+        "pricing.title":"Pricing Plans","pricing.subtitle":"Choose the plan that fits your business. Inspired by global leaders.","pricing.basic.h":"Starter","pricing.basic.f1":"✓ Price & Inventory tracking","pricing.basic.f2":"✓ Weekly PDF reports","pricing.basic.f3":"✓ Limited to 50 ASINs",
+        "pricing.pro.h":"Pro","pricing.pro.f1":"✓ All Starter features","pricing.pro.f2":"✓ Promotions & Ads analysis","pricing.pro.f3":"✓ Daily Dashboard","pricing.pro.f4":"✓ Up to 500 ASINs",
+        "pricing.ent.h":"Enterprise","pricing.ent.f1":"✓ All Pro features","pricing.ent.f2":"✓ API access","pricing.ent.f3":"✓ Dedicated support team","pricing.ent.f4":"✓ Unlimited ASINs",
+        "contact.title":"Contact AMI Solution","contact.nameL":"Name","contact.emailL":"Email","contact.msgL":"Message",
+        "footer.copy":"© 2025 AMI Solution. All rights reserved."
+      },
+      vi: {
+        "nav.services":"Dịch vụ","nav.ai":"AI Insights","nav.pricing":"Bảng giá","nav.contact":"Liên hệ",
+        "cta.header":"Bắt đầu","cta.getStarted":"Liên hệ ngay","cta.learnMore":"Tìm hiểu thêm","cta.send":"Gửi",
+        "hero.title":"Dữ liệu & AI cho quyết định thương mại điện tử thông minh","hero.subtitle":"Theo dõi đối thủ trên Amazon, Walmart, Wayfair, Target — tối ưu giá, khuyến mãi, quảng cáo & tồn kho.",
+        "services.title":"Dữ liệu thị trường & đối thủ","services.price.h":"Theo dõi giá","services.price.p":"Theo dõi giá niêm yết, Buy Box, lịch sử khuyến mãi.",
+        "services.promo.h":"Khuyến mãi & Deal","services.promo.p":"Coupon, Lightning Deals, chiến dịch mùa vụ.","services.ads.h":"Quảng cáo & Từ khóa","services.ads.p":"Vị trí quảng cáo, share-of-voice từ khóa.",
+        "ai.title":"AI Insights","ai.pricing.h":"Định giá động","ai.pricing.p":"AI gợi ý giá tối ưu để thắng Buy Box.","ai.demand.h":"Dự báo nhu cầu","ai.demand.p":"AI dự đoán nhu cầu & rủi ro OOS.","ai.content.h":"Trí tuệ nội dung","ai.content.p":"AI phân tích review & đề xuất cải thiện nội dung.",
+        "pricing.title":"Gói dịch vụ","pricing.subtitle":"Chọn gói phù hợp cho doanh nghiệp.","pricing.basic.h":"Starter","pricing.basic.f1":"✓ Theo dõi giá & tồn kho","pricing.basic.f2":"✓ Báo cáo PDF hàng tuần","pricing.basic.f3":"✓ Tối đa 50 ASIN",
+        "pricing.pro.h":"Pro","pricing.pro.f1":"✓ Toàn bộ tính năng Starter","pricing.pro.f2":"✓ Phân tích khuyến mãi & quảng cáo","pricing.pro.f3":"✓ Dashboard hằng ngày","pricing.pro.f4":"✓ Tối đa 500 ASIN",
+        "pricing.ent.h":"Enterprise","pricing.ent.f1":"✓ Toàn bộ tính năng Pro","pricing.ent.f2":"✓ Truy cập API","pricing.ent.f3":"✓ Hỗ trợ riêng","pricing.ent.f4":"✓ Không giới hạn ASIN",
+        "contact.title":"Liên hệ AMI Solution","contact.nameL":"Họ tên","contact.emailL":"Email","contact.msgL":"Nội dung",
+        "footer.copy":"© 2025 AMI Solution. Bản quyền."
+      },
+      es: {
+        "nav.services":"Servicios","nav.ai":"AI Insights","nav.pricing":"Precios","nav.contact":"Contacto",
+        "cta.header":"Comenzar","cta.getStarted":"Habla con nosotros","cta.learnMore":"Saber más","cta.send":"Enviar",
+        "hero.title":"Datos e IA para decisiones de e-commerce más inteligentes","hero.subtitle":"Monitorea competidores en Amazon, Walmart, Wayfair, Target — optimiza precios, promociones, anuncios e inventario.",
+        "services.title":"Datos de mercado y competencia","services.price.h":"Seguimiento de precios","services.price.p":"Seguimiento de precios de lista, Buy Box, historial de promociones.",
+        "services.promo.h":"Promociones y ofertas","services.promo.p":"Cupones, Lightning Deals, campañas de temporada.","services.ads.h":"Anuncios y palabras clave","services.ads.p":"Ubicaciones de anuncios, share-of-voice estimado.",
+        "ai.title":"Insights impulsados por IA","ai.pricing.h":"Precios dinámicos","ai.pricing.p":"La IA sugiere precios óptimos para ganar Buy Box.","ai.demand.h":"Pronóstico de demanda","ai.demand.p":"La IA predice la demanda y los riesgos OOS.","ai.content.h":"Inteligencia de contenido","ai.content.p":"La IA analiza reseñas y sugiere mejoras de contenido.",
+        "pricing.title":"Planes de precios","pricing.subtitle":"Elige el plan adecuado para tu negocio.","pricing.basic.h":"Starter","pricing.basic.f1":"✓ Seguimiento de precios e inventario","pricing.basic.f2":"✓ Informes PDF semanales","pricing.basic.f3":"✓ Hasta 50 ASINs",
+        "pricing.pro.h":"Pro","pricing.pro.f1":"✓ Todas las funciones de Starter","pricing.pro.f2":"✓ Análisis de promociones y anuncios","pricing.pro.f3":"✓ Dashboard diario","pricing.pro.f4":"✓ Hasta 500 ASINs",
+        "pricing.ent.h":"Enterprise","pricing.ent.f1":"✓ Todas las funciones de Pro","pricing.ent.f2":"✓ Acceso API","pricing.ent.f3":"✓ Equipo de soporte dedicado","pricing.ent.f4":"✓ ASINs ilimitados",
+        "contact.title":"Contacto AMI Solution","contact.nameL":"Nombre","contact.emailL":"Correo","contact.msgL":"Mensaje",
+        "footer.copy":"© 2025 AMI Solution. Todos los derechos reservados."
+      },
+      zh: {
+        "nav.services":"服务","nav.ai":"AI 洞察","nav.pricing":"定价","nav.contact":"联系",
+        "cta.header":"开始使用","cta.getStarted":"联系我们","cta.learnMore":"了解更多","cta.send":"发送",
+        "hero.title":"数据与AI助力电商决策","hero.subtitle":"监测Amazon、Walmart、Wayfair、Target竞争对手——优化定价、促销、广告和库存。",
+        "services.title":"市场与竞品数据","services.price.h":"价格追踪","services.price.p":"追踪列表价、Buy Box、促销历史。",
+        "services.promo.h":"促销与优惠","services.promo.p":"优惠券、Lightning Deals、季节性活动。","services.ads.h":"广告与关键词","services.ads.p":"广告位置、关键词声量份额。",
+        "ai.title":"AI驱动洞察","ai.pricing.h":"动态定价","ai.pricing.p":"AI建议最佳价格以赢得Buy Box。","ai.demand.h":"需求预测","ai.demand.p":"AI预测需求与缺货风险。","ai.content.h":"内容智能","ai.content.p":"AI分析评论并提出内容优化建议。",
+        "pricing.title":"定价方案","pricing.subtitle":"选择适合您的计划。","pricing.basic.h":"入门","pricing.basic.f1":"✓ 价格和库存追踪","pricing.basic.f2":"✓ 每周PDF报告","pricing.basic.f3":"✓ 最多50个ASIN",
+        "pricing.pro.h":"专业","pricing.pro.f1":"✓ 包含入门版全部功能","pricing.pro.f2":"✓ 促销与广告分析","pricing.pro.f3":"✓ 每日仪表盘","pricing.pro.f4":"✓ 最多500个ASIN",
+        "pricing.ent.h":"企业","pricing.ent.f1":"✓ 包含专业版全部功能","pricing.ent.f2":"✓ API访问","pricing.ent.f3":"✓ 专属支持团队","pricing.ent.f4":"✓ 无限ASIN",
+        "contact.title":"联系AMI Solution","contact.nameL":"姓名","contact.emailL":"邮箱","contact.msgL":"消息",
+        "footer.copy":"© 2025 AMI Solution. 保留所有权利。"
+      },
+      ja: {
+        "nav.services":"サービス","nav.ai":"AIインサイト","nav.pricing":"料金","nav.contact":"お問い合わせ",
+        "cta.header":"開始する","cta.getStarted":"相談する","cta.learnMore":"詳しく見る","cta.send":"送信",
+        "hero.title":"データとAIで賢いEC意思決定を","hero.subtitle":"Amazon・Walmart・Wayfair・Targetの競合を監視し、価格・プロモ・広告・在庫を最適化。",
+        "services.title":"市場・競合データ","services.price.h":"価格トラッキング","services.price.p":"リスト価格、Buy Box、プロモ履歴を追跡。",
+        "services.promo.h":"プロモーション・ディール","services.promo.p":"クーポン、Lightning Deals、季節キャンペーン。","services.ads.h":"広告・キーワード","services.ads.p":"広告配置、SOV推定。",
+        "ai.title":"AIインサイト","ai.pricing.h":"ダイナミックプライシング","ai.pricing.p":"AIが最適価格を提案。","ai.demand.h":"需要予測","ai.demand.p":"AIが需要と欠品リスクを予測。","ai.content.h":"コンテンツインテリジェンス","ai.content.p":"AIがレビューを分析し、改善を提案。",
+        "pricing.title":"料金プラン","pricing.subtitle":"ビジネスに合ったプランを選択。","pricing.basic.h":"スターター","pricing.basic.f1":"✓ 価格・在庫追跡","pricing.basic.f2":"✓ 週次PDF","pricing.basic.f3":"✓ 最大50ASIN",
+        "pricing.pro.h":"プロ","pricing.pro.f1":"✓ スターター全機能","pricing.pro.f2":"✓ プロモ・広告分析","pricing.pro.f3":"✓ 日次ダッシュボード","pricing.pro.f4":"✓ 最大500ASIN",
+        "pricing.ent.h":"エンタープライズ","pricing.ent.f1":"✓ プロ全機能","pricing.ent.f2":"✓ APIアクセス","pricing.ent.f3":"✓ 専任サポート","pricing.ent.f4":"✓ 無制限ASIN",
+        "contact.title":"AMI Solutionへのお問い合わせ","contact.nameL":"名前","contact.emailL":"メール","contact.msgL":"メッセージ",
+        "footer.copy":"© 2025 AMI Solution. 無断転載禁止。"
+      }
+    };
+
+    const flags={en:"🇺🇸",vi:"🇻🇳",es:"🇪🇸",zh:"🇨🇳",ja:"🇯🇵"};
+
+    function applyLang(lang){
+      const dict=t[lang]||t.en;
+      document.querySelectorAll("[data-i18n]").forEach(el=>{
+        const key=el.getAttribute("data-i18n");
+        if(dict[key]) el.textContent=dict[key];
+      });
+      // placeholders
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{
+        const key=el.getAttribute("data-i18n-placeholder");
+        if(dict[key]) el.placeholder=dict[key];
+      });
+      document.getElementById("flag").textContent=flags[lang];
+      document.documentElement.lang=lang;
+    }
+
+    const sel=document.getElementById("lang");
+    sel.addEventListener("change",e=>applyLang(e.target.value));
+    applyLang("en");
+  </script>
 </body>
 </html>
