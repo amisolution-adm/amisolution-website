@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>AMI Solution — Problem → Solution → Value</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{
+    --ink:#0f172a; --sub:#475569; --bg:#ffffff;
+    --brand:#2563eb; --brand2:#7c3aed; --ok:#16a34a; --warn:#ea580c; --danger:#dc2626;
+    --muted:#f1f5f9; --line:#e2e8f0;
+  }
+  html,body{background:var(--bg); color:var(--ink); font-family:"Inter", Tahoma, system-ui, -apple-system, Segoe UI, Roboto, sans-serif}
+  .container{max-width:1080px; margin:0 auto; padding:0 16px}
+  .section{padding:36px 0}
+  .h1{font-size:clamp(28px,5vw,40px); font-weight:800; letter-spacing:-.02em}
+  .h2{font-size:clamp(22px,3.5vw,28px); font-weight:800}
+  .h3{font-size:18px; font-weight:700}
+  .lead{color:var(--sub); font-size:18px}
+  .card{border:1px solid var(--line); border-radius:14px; padding:16px; background:#fff}
+  .pill{border:1px solid var(--line); padding:.35rem .6rem; border-radius:999px; color:var(--sub); font-size:12px}
+  .kpi{display:grid; gap:10px; grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media (min-width:960px){ .grid-2{display:grid; gap:16px; grid-template-columns:1.2fr .8fr} .kpi{grid-template-columns:repeat(4,minmax(0,1fr))} }
+  .tile{border:1px solid var(--line); border-radius:12px; padding:12px; background:var(--muted)}
+  .val{font-weight:800; font-size:20px}
+  .up{color:var(--ok)} .down{color:var(--danger)}
+  .btn{display:inline-flex; align-items:center; gap:8px; border-radius:10px; padding:.7rem 1rem; font-weight:700}
+  .btn-primary{background:var(--brand); color:#fff}
+  .btn-outline{border:1px solid var(--line); color:var(--ink); background:#fff}
+  .check::before{content:"✓"; margin-right:.5rem; color:var(--ok); font-weight:800}
+  .x::before{content:"✕"; margin-right:.5rem; color:var(--danger); font-weight:800}
+  .dot{width:8px; height:8px; border-radius:999px; background:var(--brand)}
+  .list-tight li{margin:.35rem 0}
+  .badge{background:#eef2ff; color:#3730a3; font-weight:700}
+  .bg-grad{background:linear-gradient(180deg,#f8fafc, #ffffff)}
+  .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size:12px; color:#334155}
+</style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="border-b border-slate-200 sticky top-0 bg-white/80 backdrop-blur z-40">
+    <div class="container py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-lg bg-[var(--brand)] text-white grid place-items-center font-extrabold">AI</div>
+        <div class="font-extrabold">AMI Solution</div>
+        <span class="pill hidden md:inline">Problem → Solution → Value</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <a href="#contact" class="btn btn-outline">Contact</a>
+        <a href="#cta" class="btn btn-primary">Book 20-min Diagnostic</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="section bg-grad">
+    <div class="container grid-2 items-center">
+      <div>
+        <div class="pill mb-3">E-commerce Market & Competitor Intelligence</div>
+        <h1 class="h1">Understand the market. Win the Buy Box. Spend smarter with AI.</h1>
+        <p class="lead mt-3">AMI unifies <b>Price</b>, <b>Inventory</b>, <b>Content</b>, <b>Promotions</b>, and <b>Ads</b> data to drive actions that lift revenue and ROAS — fast.</p>
+        <div class="kpi mt-4">
+          <div class="tile"><div class="text-sm text-slate-500">Buy Box%</div><div class="val up">+6–12pp</div></div>
+          <div class="tile"><div class="text-sm text-slate-500">ROAS</div><div class="val up">+12–35%</div></div>
+          <div class="tile"><div class="text-sm text-slate-500">Effective CPC</div><div class="val down">−10–20%</div></div>
+          <div class="tile"><div class="text-sm text-slate-500">Manual Time</div><div class="val down">−30–50%</div></div>
+        </div>
+        <div class="mt-4 flex gap-8 text-sm text-slate-600">
+          <div class="flex items-center gap-2"><span class="dot"></span> Amazon</div>
+          <div class="flex items-center gap-2"><span class="dot"></span> Walmart</div>
+          <div class="flex items-center gap-2"><span class="dot"></span> Wayfair</div>
+          <div class="flex items-center gap-2"><span class="dot"></span> Target</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="h3 mb-2">What you get (in 4 weeks)</div>
+        <ul class="list-tight text-slate-700">
+          <li class="check">Realtime Buy Box & Effective Price tracking</li>
+          <li class="check">Rival OOS & Promo alerts (email/Slack)</li>
+          <li class="check">AI Playbooks: Dynamic Pricing, Budget Shift, Promo Planner</li>
+          <li class="check">Dashboard + weekly executive summary</li>
+        </ul>
+        <div class="mt-3 mono">Pilot example → ΔRevenue ≈ <b>$66.7k/mo</b> from +6pp Buy Box; Ad savings ≈ <b>$10–12k</b>.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1) PROBLEM — short & sharp -->
+  <section id="problem" class="section">
+    <div class="container">
+      <div class="flex items-end justify-between mb-2">
+        <h2 class="h2">1) The Problem</h2>
+        <span class="badge rounded px-2 py-1 text-xs">Short & Sharp</span>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="h3 mb-1">What’s going wrong</div>
+          <ul class="list-tight text-slate-700">
+            <li>Lose Buy Box due to <b>effective price gap</b>, slower ship, or <b>OOS windows</b>.</li>
+            <li>Overspend Ads: bidding while OOS/off-BB, keyword bleed, no day-parting.</li>
+            <li>Miss Promotions: cannot match rival <b>coupon/LD cadence</b>.</li>
+          </ul>
+          <div class="mt-2 text-sm text-slate-600">
+            <b>Example:</b> You $29.99 vs rival $31.99 +10% coupon ⇒ effective $28.79 ⇒ Buy Box 62%→44% (~−$8.1k/week).
+          </div>
+        </div>
+        <div class="card">
+          <div class="h3 mb-1">Why it happens</div>
+          <ul class="list-tight text-slate-700">
+            <li>Data is <b>fragmented</b> across price, ads, promo, inventory.</li>
+            <li>Refresh is <b>slow</b> (D+1 reports) — no minute-level alerts.</li>
+            <li>Missing <b>playbooks</b> to act (pricing, bidding, promo timing).</li>
+          </ul>
+          <div class="mt-2 text-sm text-slate-600">Outcome: ROAS↓, CPC↑, Buy Box↓, revenue leaks to rivals.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2) SOLUTION — how AMI fixes it -->
+  <section id="solution" class="section bg-slate-50">
+    <div class="container">
+      <h2 class="h2 mb-2">2) The AMI Solution</h2>
+      <div class="grid-2">
+        <div class="card">
+          <div class="h3 mb-1">Unified data → clear actions</div>
+          <ul class="list-tight text-slate-700">
+            <li><b>Effective Price engine</b>: list − coupon/deal ± ship → true gap vs rivals.</li>
+            <li><b>OOS scanner</b>: detects (you & rivals) and triggers price/bid playbooks.</li>
+            <li><b>Promo mapping</b>: coupon/BD/LD cadence → plan winning promos.</li>
+            <li><b>Ads guardrails</b>: stop/scale based on Buy Box & stock status.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="h3 mb-1">AI Playbooks (ready-to-run)</div>
+          <ul class="list-tight text-slate-700">
+            <li><b>Dynamic Pricing</b> — keep margin, close effective gap, exploit rival OOS.</li>
+            <li><b>Budget Shift</b> — push winners by hour & rival OOS, tighten keywords.</li>
+            <li><b>Promo Planner</b> — align discounts to elasticity & seasonality.</li>
+          </ul>
+          <div class="mt-2 text-sm text-slate-600">Delivered via dashboard + Slack/Email alerts. Setup <b>&lt; 1 week</b>.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3) VALUE — what you get -->
+  <section id="value" class="section">
+    <div class="container">
+      <h2 class="h2 mb-2">3) The Value</h2>
+      <div class="grid-2">
+        <div class="card">
+          <div class="h3 mb-1">Before → After (4-week pilot)</div>
+          <div class="kpi">
+            <div class="tile"><div class="text-sm text-slate-500">Revenue</div><div class="val up">$500k → $566k</div></div>
+            <div class="tile"><div class="text-sm text-slate-500">ROAS</div><div class="val up">2.0 → 2.4</div></div>
+            <div class="tile"><div class="text-sm text-slate-500">Ad Spend</div><div class="val down">$60k → $50–54k</div></div>
+            <div class="tile"><div class="text-sm text-slate-500">Buy Box%</div><div class="val up">45% → 51–57%</div></div>
+          </div>
+          <div class="mt-2 text-sm text-slate-600">Net profit uplift: <b>+$30k–40k/mo</b> after AMI fee.</div>
+        </div>
+        <div class="card">
+          <div class="h3 mb-1">ROI quick math</div>
+          <div class="mono">
+            ΔRevenue ≈ R0 × (ΔBB / BB0)<br/>
+            Ad Savings ≈ Spend × (ΔROAS)<br/>
+            ROI% ≈ (GP Uplift + Ad Savings − AMI Fee) / Fee × 100
+          </div>
+          <div class="mt-2 text-sm text-slate-600">
+            Example: R0 $500k; BB0 45%; ΔBB +6pp; GM 35%; Spend $60k; ΔROAS +20%; Fee $1.5k → ROI ≈ <b>~2,300%</b>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages -->
+  <section id="pricing" class="section bg-slate-50">
+    <div class="container">
+      <h2 class="h2 mb-2">Packages</h2>
+      <div class="grid md:grid-cols-3 gap-16 md:gap-6">
+        <div class="card">
+          <div class="h3 mb-1">Starter</div>
+          <ul class="list-tight text-slate-700">
+            <li class="check">50 ASIN</li>
+            <li class="check">Weekly snapshot</li>
+            <li class="check">Core dashboard</li>
+          </ul>
+          <div class="mt-3 text-2xl font-extrabold">$490<span class="text-sm text-slate-500">/mo</span></div>
+        </div>
+        <div class="card border-2 border-[var(--brand)]">
+          <div class="h3 mb-1">Pro</div>
+          <ul class="list-tight text-slate-700">
+            <li class="check">500 ASIN</li>
+            <li class="check">Daily dashboard</li>
+            <li class="check">Promo & Ads SOV</li>
+            <li class="check">Alerts</li>
+          </ul>
+          <div class="mt-3 text-2xl font-extrabold">$1,490<span class="text-sm text-slate-500">/mo</span></div>
+        </div>
+        <div class="card">
+          <div class="h3 mb-1">Enterprise</div>
+          <ul class="list-tight text-slate-700">
+            <li class="check">&gt; 5,000 ASIN</li>
+            <li class="check">API access</li>
+            <li class="check">Dedicated analyst</li>
+          </ul>
+          <div class="mt-3 text-2xl font-extrabold">Custom</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" class="section">
+    <div class="container">
+      <div class="card flex flex-col md:flex-row items-center justify-between gap-3">
+        <div>
+          <div class="h3">Next Steps</div>
+          <div class="text-slate-600 text-sm mt-1">1) 20-min diagnostic • 2) 4-week pilot • 3) Scale & API</div>
+        </div>
+        <a href="#contact" class="btn btn-primary">Book 20-min Diagnostic</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section bg-slate-50">
+    <div class="container">
+      <h2 class="h2 mb-2">Contact</h2>
+      <div class="grid-2">
+        <div class="card">
+          <div class="h3 mb-1">Get in touch</div>
+          <div class="text-slate-700">ami.solution.adm@gmail.com</div>
+          <div class="text-slate-700">amisolution.com.vn</div>
+          <div class="text-slate-500 text-sm mt-2">We reply within 24 hours.</div>
+        </div>
+        <form class="card" onsubmit="event.preventDefault(); alert('Thanks! We will reach out within 24h.');">
+          <div class="grid md:grid-cols-2 gap-3">
+            <div><label class="text-sm text-slate-600">Name</label><input class="w-full border border-slate-300 rounded-md px-3 py-2" required/></div>
+            <div><label class="text-sm text-slate-600">Email</label><input type="email" class="w-full border border-slate-300 rounded-md px-3 py-2" required/></div>
+            <div class="md:col-span-2"><label class="text-sm text-slate-600">Message</label><textarea class="w-full border border-slate-300 rounded-md px-3 py-2 h-24" required></textarea></div>
+          </div>
+          <button class="btn btn-primary mt-3 w-full md:w-auto">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-slate-200">
+    <div class="container py-4 text-sm text-slate-500">© 2025 AMI Solution</div>
+  </footer>
+</body>
+</html>
